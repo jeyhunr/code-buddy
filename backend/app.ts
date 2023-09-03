@@ -1,3 +1,5 @@
+import { NextFunction, Request, Response } from "express";
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -17,12 +19,12 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function(req: Request, res: Response, next: NextFunction) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err: any, req: Request, res: Response, next: NextFunction) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
