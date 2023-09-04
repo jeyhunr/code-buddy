@@ -11,6 +11,6 @@ const openaiSchema = Joi.object({
 
 const router = express.Router();
 
-router.post('/review-code', validator.query(openaiSchema), openaiController);
+router.post('/review-code', validator.body(openaiSchema), openaiController);
 
 export default router;
