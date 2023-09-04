@@ -4,13 +4,19 @@ import logger from 'morgan';
 import openaiRoutes from './api/routes/openaiRoutes';
 import dotenv from 'dotenv';
 
+dotenv.config();
+
+// api prefix from env
+const apiPref = process.env.API_PREF;
+
 const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 // app router
-app.use('/openai', openaiRoutes)
+app.use(`${apiPref}/openai`, openaiRoutes)
 
 // catch 404 and forward to error handler
 app.use(function (req: Request, res: Response, next: NextFunction) {
