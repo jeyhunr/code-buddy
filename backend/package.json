@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start:dev": "nodemon ./bin/www",
     "start": "node ./bin/www",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q ./dist/app.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon ./bin/www\""
   },
   "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/morgan": "^1.9.5",
     "concurrently": "^8.2.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
