@@ -1,13 +1,26 @@
 import { Response } from 'express';
 import { ValidatedRequest } from 'express-joi-validation';
 import { IOpenaiSchema } from '../interfaces/openaiSchema.interface';
+import OpenAI from 'openai';
+import dotenv from 'dotenv';
 
-export const openaiController = (req: ValidatedRequest<IOpenaiSchema>, res: Response) => {
+dotenv.config();
+
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+});
+
+export const openaiController = async (req: ValidatedRequest<IOpenaiSchema>, res: Response): Promise<any> => {
+    const { code } = req.body;
+
     try {
-        res.json({
-            test: "hello world"
-        })
+        const completion = await openai.chat.completions.create({
+            messages: [{ role: 'user', content: `Review this code: \t ${code}` }],
+            model: 'gpt-3.5-turbo',
+        });
+
+        return completion.choices;
     } catch (error) {
-        res.status(500).json({ error: '500 Server error' });
+        res.status(500).json({ message: error });
     }
 };
