@@ -1,6 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
 import createError from 'http-errors';
-import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import openaiRoutes from './api/routes/openaiRoutes';
 import dotenv from 'dotenv';
@@ -10,8 +9,6 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-
 // app router
 app.use('/openai', openaiRoutes)
 
