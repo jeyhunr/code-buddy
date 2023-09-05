@@ -10,6 +10,7 @@ import { ImprintComponent } from './pages/imprint/imprint.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { BannerComponent } from './layouts/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
     ReviewComponent,
     ImprintComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
