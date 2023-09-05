@@ -6,6 +6,7 @@ import { ReviewComponent } from './pages/review/review.component';
 import { ImprintComponent } from './pages/imprint/imprint.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'review', component: ReviewComponent },
   { path: 'imprint', component: ImprintComponent },
