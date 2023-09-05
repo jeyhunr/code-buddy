@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { BannerComponent } from './layouts/banner/banner.component';
+import { CardComponent } from './layouts/card/card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BannerComponent } from './layouts/banner/banner.component';
     ImprintComponent,
     NotFoundComponent,
     NavbarComponent,
-    BannerComponent
+    BannerComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
