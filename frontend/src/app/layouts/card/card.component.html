@@ -1,1 +1,8 @@
-<p>card works!</p>
+<div class="card bg-dark text-white">
+    <img *ngIf="card.imgSrc" [src]="card.imgSrc" class="card-img-top" [alt]="card.title">
+    <div class="card-body">
+        <h5 *ngIf="card.title" class="card-title">{{ card.title }}</h5>
+        <p *ngIf="card.description" class="card-text">{{ card.description }}</p>
+        <div *ngIf="card.buttonText" class="btn btn-primary">{{ card.buttonText }}</div>
+    </div>
+</div>
