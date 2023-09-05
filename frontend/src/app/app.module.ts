@@ -9,6 +9,7 @@ import { ReviewComponent } from './pages/review/review.component';
 import { ImprintComponent } from './pages/imprint/imprint.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NavbarComponent } from './layouts/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     HomeComponent,
     ReviewComponent,
     ImprintComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
