@@ -7,6 +7,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReviewComponent } from './pages/review/review.component';
 import { ImprintComponent } from './pages/imprint/imprint.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ImprintComponent } from './pages/imprint/imprint.component';
     ImprintComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
